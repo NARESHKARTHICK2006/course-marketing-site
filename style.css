@@ -201,10 +201,10 @@ body {
 }
 
 /* Local Image Placeholders */
-.course-1 { background-image: url('workshop1.jpg'); }
-.course-2 { background-image: url('workshop2.jpg'); }
-.course-3 { background-image: url('workshop3.jpg'); }
-.course-4 { background-image: url('workshop4.jpg'); }
+.course-1 { background-image: url('cloud.jpg'); }
+.course-2 { background-image: url('neural.jpg'); }
+.course-3 { background-image: url('product_growth.jpg'); }
+.course-4 { background-image: url('data_analytic.png'); }
 
 .card-content {
     padding-top: 2rem;
