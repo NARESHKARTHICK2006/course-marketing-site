@@ -33,7 +33,7 @@ body {
     padding-bottom: 100px;
 }
 
-/* --- 3. NAVIGATION --- */
+/* --- 3. NAVIGATION & SEARCH --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -49,6 +49,8 @@ body {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #edf2f7;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
+    gap: 15px;
 }
 
 .logo {
@@ -57,17 +59,44 @@ body {
     color: var(--brand-blue);
 }
 
+.search-container {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.search-container input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-light);
+    background-color: #f8fafc;
+    font-size: 0.95rem;
+    transition-duration: 0.3s;
+    outline-style: none;
+}
+
+.search-container input:focus {
+    border-color: var(--brand-blue);
+    background-color: var(--white);
+    box-shadow: 0px 0px 8px rgba(0, 86, 210, 0.15);
+}
+
 .nav-links {
     display: flex;
     list-style-type: none;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration-line: none;
     color: var(--deep-navy);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition-duration: 0.3s;
 }
 
@@ -101,8 +130,8 @@ body {
 
 /* --- 5. HERO SECTION --- */
 .hero {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     padding-left: 8%;
     padding-right: 8%;
     text-align: center;
@@ -125,7 +154,7 @@ body {
     margin-left: auto;
 }
 
-/* --- 6. COURSE GRID & SCROLL --- */
+/* --- 6. WORKSHOP GRID & IMAGES --- */
 .course-section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -165,7 +194,17 @@ body {
 .card-img {
     height: 180px;
     background-color: var(--deep-navy);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-duration: 0.5s;
 }
+
+/* Local Image Placeholders */
+.course-1 { background-image: url('cloud.jpg'); }
+.course-2 { background-image: url('neural.jpg'); }
+.course-3 { background-image: url('product_growth.jpg'); }
+.course-4 { background-image: url('data_analytic.png'); }
 
 .card-content {
     padding-top: 2rem;
@@ -235,7 +274,7 @@ body {
     color: var(--brand-blue);
 }
 
-/* --- 8. PRICING TABLE --- */
+/* --- 8. PRICING --- */
 .pricing-grid {
     display: flex;
     flex-direction: column;
@@ -258,29 +297,11 @@ body {
     border-style: solid;
     border-color: var(--border-light);
     text-align: center;
-    position: relative;
 }
 
 .price-card.popular {
     border-width: 3px;
-    border-style: solid;
     border-color: var(--brand-blue);
-    transform: scale(1.05);
-}
-
-.ribbon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: var(--brand-blue);
-    color: var(--white);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 700;
 }
 
 .price {
@@ -298,17 +319,11 @@ body {
 .price-card ul {
     list-style-type: none;
     margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-align: left;
     padding-left: 15%;
+    text-align: left;
 }
 
-.price-card li {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-/* --- 9. STICKY REGISTRATION BAR --- */
+/* --- 9. STICKY BAR --- */
 .sticky-reg-bar {
     position: fixed;
     bottom: 0;
@@ -386,7 +401,6 @@ body {
     width: 100%;
     border-radius: 6px;
     font-weight: 700;
-    cursor: pointer;
 }
 
 .btn-sm {
@@ -401,21 +415,16 @@ body {
     border-style: none;
 }
 
-/* --- 11. FAQ ACCORDION --- */
+/* --- 11. FAQ --- */
 .accordion {
     max-width: 800px;
-    margin-top: 0px;
     margin-right: auto;
-    margin-bottom: 0px;
     margin-left: auto;
 }
 
 .accordion-header {
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     text-align: left;
     background-color: var(--soft-blue);
     border-style: none;
@@ -433,18 +442,14 @@ body {
     max-height: 0;
     overflow: hidden;
     transition-duration: 0.3s;
-    background-color: var(--white);
 }
 
 .accordion-body p {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     color: var(--text-muted);
 }
 
-/* --- 12. DESKTOP MEDIA QUERIES --- */
+/* --- 12. DESKTOP ADAPTATION --- */
 @media (min-width: 1024px) {
     .course-grid {
         display: grid;
@@ -462,5 +467,17 @@ body {
     .reg-content {
         flex-direction: row;
         justify-content: center;
+    }
+}
+
+/* Mobile specific for search */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+    }
+    .search-container {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
     }
 }
