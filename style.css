@@ -49,7 +49,7 @@ body {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #edf2f7;
-    flex-wrap: wrap; /* Allows wrapping on mobile */
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -76,8 +76,8 @@ body {
     border-color: var(--border-light);
     background-color: #f8fafc;
     font-size: 0.95rem;
-    transition-duration: 0.3s;
     outline-style: none;
+    transition-duration: 0.3s;
 }
 
 .search-container input:focus {
@@ -154,7 +154,7 @@ body {
     margin-left: auto;
 }
 
-/* --- 6. WORKSHOP GRID & IMAGES --- */
+/* --- 6. WORKSHOP IMAGES & GRID --- */
 .course-section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -201,10 +201,10 @@ body {
 }
 
 /* Local Image Placeholders */
-.course-1 { background-image: url('cloud.jpg'); }
-.course-2 { background-image: url('neural.jpg'); }
-.course-3 { background-image: url('product_growth.jpg'); }
-.course-4 { background-image: url('data_analytic.png'); }
+.course-1 { background-image: url('workshop1.jpg'); }
+.course-2 { background-image: url('workshop2.jpg'); }
+.course-3 { background-image: url('workshop3.jpg'); }
+.course-4 { background-image: url('workshop4.jpg'); }
 
 .card-content {
     padding-top: 2rem;
@@ -274,7 +274,7 @@ body {
     color: var(--brand-blue);
 }
 
-/* --- 8. PRICING --- */
+/* --- 8. PRICING (DUAL BLUE BORDERS) --- */
 .pricing-grid {
     display: flex;
     flex-direction: column;
@@ -293,15 +293,33 @@ body {
     padding-bottom: 4rem;
     padding-left: 2rem;
     border-radius: 20px; 
-    border-width: 1px;
+    /* Both cards now get the thick blue border */
+    border-width: 3px;
     border-style: solid;
-    border-color: var(--border-light);
+    border-color: var(--brand-blue);
     text-align: center;
+    position: relative;
 }
 
 .price-card.popular {
-    border-width: 3px;
-    border-color: var(--brand-blue);
+    /* Scale remains unique to the Premium plan */
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.ribbon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--brand-blue);
+    color: var(--white);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
 .price {
@@ -319,11 +337,17 @@ body {
 .price-card ul {
     list-style-type: none;
     margin-top: 2rem;
-    padding-left: 15%;
+    margin-bottom: 2rem;
     text-align: left;
+    padding-left: 15%;
 }
 
-/* --- 9. STICKY BAR --- */
+.price-card li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* --- 9. STICKY REGISTRATION BAR --- */
 .sticky-reg-bar {
     position: fixed;
     bottom: 0;
@@ -401,6 +425,7 @@ body {
     width: 100%;
     border-radius: 6px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .btn-sm {
