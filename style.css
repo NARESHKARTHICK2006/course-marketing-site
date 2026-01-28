@@ -1,0 +1,466 @@
+/* --- 1. CORE VARIABLES --- */
+:root {
+    --brand-blue: #0056d2;
+    --deep-navy: #001e3c;
+    --soft-blue: #f5f9ff;
+    --white: #ffffff;
+    --text-muted: #5e6d7e;
+    --border-light: #e2e8f0;
+}
+
+/* --- 2. GLOBAL RESET --- */
+* {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--deep-navy);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 100px;
+}
+
+/* --- 3. NAVIGATION --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #edf2f7;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration-line: none;
+    color: var(--deep-navy);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition-duration: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--brand-blue);
+}
+
+/* --- 4. SECTION HEADERS --- */
+.section-title {
+    text-align: center;
+    margin-top: 4rem;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background-color: var(--brand-blue);
+    margin-top: 15px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+/* --- 5. HERO SECTION --- */
+.hero {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--soft-blue), var(--white));
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-left: auto;
+}
+
+/* --- 6. COURSE GRID & SCROLL --- */
+.course-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.course-scroll-container {
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.course-grid {
+    display: flex;
+    gap: 2rem;
+}
+
+.course-card {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 320px;
+    background-color: var(--white);
+    border-radius: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-light);
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--brand-blue);
+}
+
+.card-img {
+    height: 180px;
+    background-color: var(--deep-navy);
+}
+
+.card-content {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.badge {
+    color: var(--brand-blue);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* --- 7. SUCCESS STORIES --- */
+.testimonials {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: var(--soft-blue);
+}
+
+.testimonial-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1100px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: var(--brand-blue);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.student-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+}
+
+/* --- 8. PRICING TABLE --- */
+.pricing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.price-card { 
+    background-color: var(--white);
+    padding-top: 4rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    border-radius: 20px; 
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-light);
+    text-align: center;
+    position: relative;
+}
+
+.price-card.popular {
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--brand-blue);
+    transform: scale(1.05);
+}
+
+.ribbon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--brand-blue);
+    color: var(--white);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.price span {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.price-card ul {
+    list-style-type: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    padding-left: 15%;
+}
+
+.price-card li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* --- 9. STICKY REGISTRATION BAR --- */
+.sticky-reg-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--deep-navy);
+    color: var(--white);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 8%;
+    padding-right: 8%;
+    z-index: 2000;
+}
+
+.reg-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.reg-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    gap: 10px;
+}
+
+.reg-form input {
+    flex-grow: 1;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+/* --- 10. BUTTONS --- */
+.btn {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border-style: none;
+    display: inline-block;
+    text-decoration-line: none;
+}
+
+.primary {
+    background-color: var(--brand-blue);
+    color: var(--white);
+}
+
+.secondary {
+    background-color: var(--white);
+    color: var(--brand-blue);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--brand-blue);
+    margin-left: 15px;
+}
+
+.btn-outline {
+    background-color: var(--white);
+    color: var(--brand-blue);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--brand-blue);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border-style: none;
+}
+
+/* --- 11. FAQ ACCORDION --- */
+.accordion {
+    max-width: 800px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.accordion-header {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    background-color: var(--soft-blue);
+    border-style: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-light);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--deep-navy);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    background-color: var(--white);
+}
+
+.accordion-body p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--text-muted);
+}
+
+/* --- 12. DESKTOP MEDIA QUERIES --- */
+@media (min-width: 1024px) {
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .testimonial-wrapper {
+        flex-direction: row;
+    }
+    .testimonial-card {
+        flex-grow: 1;
+    }
+    .pricing-grid {
+        flex-direction: row;
+    }
+    .reg-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
